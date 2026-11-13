@@ -1,3 +1,25 @@
+:root {
+    --pantry-button: #E2572B;
+    --pantry-page-background: #FAF8F5;
+    --pantry-receipt-tag-text: #2F7D5B;
+    --pantry-receipt-tag-background: #E3F1EA;
+    --pantry-profile-default-background: #2F7D5B;
+    --pantry-navigation-text: #6B6560;
+    --pantry-header-title: #1F1D1A;
+    --pantry-input-border: #E7E2DA;
+    --pantry-drop-zone-background: #FBFAF8;
+    --pantry-receipt-image-placeholder-1: #F2C9A8;
+    --pantry-receipt-image-placeholder-2: #CFE3C3;
+    --pantry-receipt-image-placeholder-3: #D9CBE8;
+    --pantry-receipt-image-placeholder-4: #F3B9A9;
+    --pantry-receipt-image-placeholder-5: #F5D9A0;
+    --pantry-receipt-image-placeholder-6: #C8DCE8;
+    --pantry-calendar-event-background: #FCE9E1;
+    --pantry-calendar-event-text: #E2572B;
+    --pantry-checkbox: #E2572B;
+    --pantry-checkbox-border: #CFC8BE;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
