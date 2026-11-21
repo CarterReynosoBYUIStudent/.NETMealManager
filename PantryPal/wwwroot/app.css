@@ -22,6 +22,8 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--pantry-page-background);
+
 }
 
 a, .btn-link {
