@@ -1,30 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">PantryPal</a>
+﻿<header class="site-header">
+    <div class="header-content">
+        <a class="brand" href="">
+            <img class="brand-logo" src="icons/logo.svg" alt="PantryPal logo" />
+            <span>PantryPal</span>
+        </a>
+
+        <div class="navigation-right">
+            <nav class="main-nav" aria-label="PantryPal navigation">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Recipes</NavLink>
+                <NavLink class="nav-link" href="recipes">Meal Plan</NavLink>
+                <NavLink class="nav-link" href="pantry">Shopping List</NavLink>
+            </nav>
+            <button class="profile-button" type="button" aria-label="Open user profile">
+                J
+            </button>
+        </div>
     </div>
-</div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+</header>
 
