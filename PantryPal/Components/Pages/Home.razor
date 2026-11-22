@@ -1,7 +1,58 @@
 ﻿@page "/"
+@using Microsoft.EntityFrameworkCore
+@using PantryPal.Data
+@using PantryPal.Models
+@inject IDbContextFactory<AppDbContext> DbFactory
+
 
 <PageTitle>Home</PageTitle>
 
 <h1>Recipes</h1>
 
 Welcome to your new app.
+
+@* TODO: REMOVE PANTY ITEMS, THIS IS JUST FOR DEMO PURPOSES *@
+<h3>Pantry Items</h3>
+
+@if (items == null)
+{
+    <p>Loading...</p>
+}
+else if (items.Count == 0)
+{
+    <p>No pantry items were found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <td>@item.Ingredient.Name</td>
+                    <td>@item.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<PantryItem>? items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var db = await DbFactory.CreateDbContextAsync();
+
+        items = await db.PantryItems
+        .Include(item => item.Ingredient)
+            .OrderBy(item => item.Ingredient.Name)
+            .ToListAsync();
+    }
+}
