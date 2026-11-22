@@ -1,6 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using PantryPal.Components;
+using PantryPal.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString =
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string not found.");
+
+builder.Services.AddDbContextFactory<AppDbContext>(options =>
+    options.UseMySql(
+        connectionString,
+        ServerVersion.AutoDetect(connectionString)));
+
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
